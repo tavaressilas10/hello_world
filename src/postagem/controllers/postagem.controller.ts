@@ -31,7 +31,6 @@ export class PostagemController{
         return this.postagemService.create(postagem)
     }
 
-
     @Put()
     @HttpCode(HttpStatus.OK)
     update(@Body() postagem: Postagem): Promise<Postagem>{

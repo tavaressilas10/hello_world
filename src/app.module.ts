@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
 import { Postagem } from './postagem/entities/postagem.entity';
 import { PostagemModule } from './postagem/postagem.module';
 import { Tema } from './tema/entities/tema.entity';
 import { TemaModule } from './tema/tema.module';
+import { Usuario } from './usuario/entities/usuario.entity';
+import { UsuarioModule } from './usuario/usuario.module';
 
 @Module({
   imports: [
@@ -14,11 +17,13 @@ import { TemaModule } from './tema/tema.module';
       username: 'root',
       password: '81485931',
       database: 'db_blogpessoal',
-      entities: [Postagem, Tema],
+      entities: [Postagem, Tema, Usuario],
       synchronize: true
     }),
     PostagemModule,
-    TemaModule
+    TemaModule,
+    AuthModule,
+    UsuarioModule
   ],
   controllers: [],
   providers: [],

@@ -16,7 +16,7 @@ import { UsuarioModule } from './usuario/usuario.module';
       port: 3306,
       username: 'root',
       password: '81485931',
-      database: 'db_blogpessoal',
+      database: 'db_blogpessoal_test',
       entities: [Postagem, Tema, Usuario],
       synchronize: true
     }),

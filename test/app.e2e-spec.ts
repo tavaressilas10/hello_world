@@ -16,7 +16,7 @@ describe('Teste de Módulos Usuario e Auth (e2e)', () => {
         type: 'mysql',
         host: 'localhost',
         port: 3306,
-        username: 'tavaressilas',
+        username: 'root',
         password: '81485931',
         database: 'db_blogpessoal_test',
         autoLoadEntities: true,
@@ -41,7 +41,7 @@ describe('Teste de Módulos Usuario e Auth (e2e)', () => {
       .post('/usuarios/cadastrar')
       .send({
         nome: 'Root',
-        usuario: 'root@root.com',
+        usuario: 'silas@gmail.com',
         senha: 'rootroot',
         foto: ''
       });
@@ -53,7 +53,7 @@ describe('Teste de Módulos Usuario e Auth (e2e)', () => {
     const resposta = await request(app.getHttpServer())
       .post('/auth/logar')
       .send({
-        usuario: 'root@root.com',
+        usuario: 'silas@gmail.com',
         senha: 'rootroot',
       })
     expect(200)
@@ -67,7 +67,7 @@ describe('Teste de Módulos Usuario e Auth (e2e)', () => {
       .post('/usuarios/cadastrar')
       .send({
         nome: 'Root',
-        usuario: 'root@root.com',
+        usuario: 'silas@gmail.com',
         senha: 'rootroot',
         foto: ''
 
